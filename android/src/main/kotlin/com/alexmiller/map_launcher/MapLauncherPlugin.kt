@@ -11,7 +11,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
-private enum class MapType { google, googleGo, amap, baidu, waze, seznamMapy, yandexNavi, yandexMaps, citymapper, mapswithme, osmand, osmandplus, doubleGis, tencent, here, petal }
+private enum class MapType { seznamMapy, google, googleGo, amap, baidu, waze, yandexNavi, yandexMaps, citymapper, mapswithme, osmand, osmandplus, doubleGis, tencent, here, petal }
 
 private class MapModel(val mapType: MapType, val mapName: String, val packageName: String) {
     fun toMap(): Map<String, String> {
@@ -40,12 +40,12 @@ class MapLauncherPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     private val maps = listOf(
+            MapModel(MapType.seznamMapy, "Seznam Mapy", "cz.seznam.mapy"),
             MapModel(MapType.google, "Google Maps", "com.google.android.apps.maps"),
             MapModel(MapType.googleGo, "Google Maps Go", "com.google.android.apps.mapslite"),
             MapModel(MapType.amap, "Amap", "com.autonavi.minimap"),
             MapModel(MapType.baidu, "Baidu Maps", "com.baidu.BaiduMap"),
             MapModel(MapType.waze, "Waze", "com.waze"),
-            MapModel(MapType.seznamMapy, "Seznam Mapy", "cz.seznam.mapy"),
             MapModel(MapType.yandexNavi, "Yandex Navigator", "ru.yandex.yandexnavi"),
             MapModel(MapType.yandexMaps, "Yandex Maps", "ru.yandex.yandexmaps"),
             MapModel(MapType.citymapper, "Citymapper", "com.citymapper.app.release"),

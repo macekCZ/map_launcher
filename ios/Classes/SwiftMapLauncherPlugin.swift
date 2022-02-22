@@ -4,12 +4,12 @@ import MapKit
 
 
 private enum MapType: String {
+  case seznamMapy
   case apple
   case google
   case amap
   case baidu
   case waze
-  case seznamMapy
   case yandexNavi
   case yandexMaps
   case citymapper
@@ -45,12 +45,12 @@ private class Map {
 }
 
 private let maps: [Map] = [
+    Map(mapName: "Seznam Mapy", mapType: MapType.seznamMapy, urlPrefix: "szn-mapy://"),
     Map(mapName: "Apple Maps", mapType: MapType.apple, urlPrefix: ""),
     Map(mapName: "Google Maps", mapType: MapType.google, urlPrefix: "comgooglemaps://"),
     Map(mapName: "Amap", mapType: MapType.amap, urlPrefix: "iosamap://"),
     Map(mapName: "Baidu Maps", mapType: MapType.baidu, urlPrefix: "baidumap://"),
     Map(mapName: "Waze", mapType: MapType.waze, urlPrefix: "waze://"),
-    Map(mapName: "Seznam Mapy", mapType: MapType.seznamMapy, urlPrefix: "szn-mapy://"),
     Map(mapName: "Yandex Navigator", mapType: MapType.yandexNavi, urlPrefix: "yandexnavi://"),
     Map(mapName: "Yandex Maps", mapType: MapType.yandexMaps, urlPrefix: "yandexmaps://"),
     Map(mapName: "Citymapper", mapType: MapType.citymapper, urlPrefix: "citymapper://"),
